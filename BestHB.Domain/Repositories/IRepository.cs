@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BestHB.Domain.Repositories
 {
-    public interface IRepository
+    public interface IRepository //TODO: interface generica para mais de uma service?
     {
         Task<int> Add(Order order);
         Task<List<Order>> Get(QueryOrders queryOrders);

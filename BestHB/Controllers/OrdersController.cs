@@ -34,27 +34,27 @@ namespace BestHB.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(ex.Message); //Seria bom colocar uma mensagem personalizada no badRequest
             }
         }
 
         [HttpPost]
-        [Route("delete")]
+        [Route("delete")] //O caminho devia ter o Id da order que esta sendo deletada
         public IActionResult Delete([FromBody]DeleteOrderCommand command)
         {
             try
             {
-                var status = _orderService.Delete(command);
+                var status = _orderService.Delete(command); //Nao acontece nada, acho que retorna Ok mesmo nao deletando
                 return Ok(status);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
-            }
+                return BadRequest(ex.Message); //Seria bom colocar uma mensagem personalizada no badRequest
+			}
         }
 
         [HttpPost]
-        [Route("get")]
+        [Route("get")] //É um post nao um Get
         public async Task<IActionResult> Get([FromBody]QueryOrders queryOrders)
         {
             try

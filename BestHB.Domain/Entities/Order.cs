@@ -22,9 +22,9 @@ namespace BestHB.Domain.Entities
             var csv1 = this.Id + delimiter + this.Symbol + delimiter + this.Quantity + delimiter + Side + delimiter + Type + delimiter + Price;
             var csv2 = $"{this.Id}{delimiter}{this.Symbol}{delimiter}{this.Quantity}{delimiter}{Side}{delimiter}{Type}{delimiter}{Price}";
 
-            //Qual das duas abordagens acima é mais performática? Por que?
-
-            return csv1;
+			//Qual das duas abordagens acima é mais performática? Por que?
+			//Resposta: Não sei a diferença de performance, mas acho que a segunda é mais legível.
+			return csv1;
         }
     }
 

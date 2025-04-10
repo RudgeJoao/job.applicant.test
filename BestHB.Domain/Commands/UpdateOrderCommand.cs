@@ -1,6 +1,6 @@
 ﻿namespace BestHB.Domain.Commands
 {
-    public class UpdateOrderCommand
+    public class UpdateOrderCommand //TODO: Esse command nao faz nenhum comando, isso é uma entidade/model
     {
         public int UserId { get; set; }
         public int OrderId { get; set; }

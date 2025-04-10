@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BestHB.Repository
+namespace BestHB.Repository //TODO: Um projeto apenas para repositories
 {
-    public class OrderRepository : IRepository
+    public class OrderRepository : IRepository //Devia ter a propria Interface IOrderRepository?
     {
         public OrderRepository()
         {

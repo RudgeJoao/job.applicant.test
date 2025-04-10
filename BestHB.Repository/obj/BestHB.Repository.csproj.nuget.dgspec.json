@@ -1,32 +1,37 @@
 {
   "format": 1,
   "restore": {
-    "/Users/italosantana/Desktop/job.applicant.test/BestHB.Repository/BestHB.Repository.csproj": {}
+    "D:\\Github\\job.applicant.test\\BestHB.Repository\\BestHB.Repository.csproj": {}
   },
   "projects": {
-    "/Users/italosantana/Desktop/job.applicant.test/BestHB.Domain/BestHB.Domain.csproj": {
+    "D:\\Github\\job.applicant.test\\BestHB.Domain\\BestHB.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/italosantana/Desktop/job.applicant.test/BestHB.Domain/BestHB.Domain.csproj",
+        "projectUniqueName": "D:\\Github\\job.applicant.test\\BestHB.Domain\\BestHB.Domain.csproj",
         "projectName": "BestHB.Domain",
-        "projectPath": "/Users/italosantana/Desktop/job.applicant.test/BestHB.Domain/BestHB.Domain.csproj",
-        "packagesPath": "/Users/italosantana/.nuget/packages/",
-        "outputPath": "/Users/italosantana/Desktop/job.applicant.test/BestHB.Domain/obj/",
+        "projectPath": "D:\\Github\\job.applicant.test\\BestHB.Domain\\BestHB.Domain.csproj",
+        "packagesPath": "C:\\Users\\João Rudge\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\job.applicant.test\\BestHB.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "/Users/italosantana/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\João Rudge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
+            "targetAlias": "netcoreapp2.2",
             "projectReferences": {}
           }
         },
@@ -34,10 +39,17 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "netcoreapp2.2": {
+          "targetAlias": "netcoreapp2.2",
           "dependencies": {
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
@@ -52,40 +64,46 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/italosantana/Desktop/job.applicant.test/BestHB.Repository/BestHB.Repository.csproj": {
+    "D:\\Github\\job.applicant.test\\BestHB.Repository\\BestHB.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/italosantana/Desktop/job.applicant.test/BestHB.Repository/BestHB.Repository.csproj",
+        "projectUniqueName": "D:\\Github\\job.applicant.test\\BestHB.Repository\\BestHB.Repository.csproj",
         "projectName": "BestHB.Repository",
-        "projectPath": "/Users/italosantana/Desktop/job.applicant.test/BestHB.Repository/BestHB.Repository.csproj",
-        "packagesPath": "/Users/italosantana/.nuget/packages/",
-        "outputPath": "/Users/italosantana/Desktop/job.applicant.test/BestHB.Repository/obj/",
+        "projectPath": "D:\\Github\\job.applicant.test\\BestHB.Repository\\BestHB.Repository.csproj",
+        "packagesPath": "C:\\Users\\João Rudge\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\job.applicant.test\\BestHB.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "/Users/italosantana/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\João Rudge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
+            "targetAlias": "netcoreapp2.2",
             "projectReferences": {
-              "/Users/italosantana/Desktop/job.applicant.test/BestHB.Domain/BestHB.Domain.csproj": {
-                "projectPath": "/Users/italosantana/Desktop/job.applicant.test/BestHB.Domain/BestHB.Domain.csproj"
+              "D:\\Github\\job.applicant.test\\BestHB.Domain\\BestHB.Domain.csproj": {
+                "projectPath": "D:\\Github\\job.applicant.test\\BestHB.Domain\\BestHB.Domain.csproj"
               }
             }
           }
@@ -94,10 +112,17 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "netcoreapp2.2": {
+          "targetAlias": "netcoreapp2.2",
           "dependencies": {
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
@@ -112,11 +137,12 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

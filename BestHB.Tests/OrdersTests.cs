@@ -12,10 +12,10 @@ namespace BestHB.Tests
     public class OrdersTest
     {
         [TestMethod]
-        public void invalid_lot_size_on_create_order_test()
+        public void invalid_lot_size_on_create_order_test() //TODO: Mudar nome do método, sem underlines e em pascalCase -> InvalidLotSizeOnCreateOrderTest
         {
             //given
-            var command = new CreateOrderCommand {
+            var command = new CreateOrderCommand { //ainda nao sei pq um comando é um objeto
                 Price = 10,
                 Quantity = 40,
                 Side = Domain.Commands.OrderSide.Sell,

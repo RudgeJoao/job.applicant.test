@@ -2,7 +2,7 @@
 
 namespace BestHB.Domain.Commands
 {
-    public class CreateOrderCommand
+    public class CreateOrderCommand //TODO: Nao entendo pq ser um comando, sendo que é usado como um objeto/DTO
     {
         public int UserId { get; set; }
         public string Symbol { get; set; }

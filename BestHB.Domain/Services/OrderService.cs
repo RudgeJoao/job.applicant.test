@@ -28,69 +28,75 @@ namespace BestHB.Domain.Services
         }
 
         public int Create(CreateOrderCommand createOrderCommand)
-        {
+		{
+			ValidateCreateOrderCommand(createOrderCommand);
 
-            if (createOrderCommand.UserId <= 0)
-                throw new Exception("Usuário inválido.");
+			var order = new Order
+			{
+				ExpiresAt = createOrderCommand.ExpiresAt,
+				CreatedAt = DateTime.Now,
+				Symbol = createOrderCommand.Symbol,
+				Price = createOrderCommand.Price,
+				Quantity = createOrderCommand.Quantity,
+				Side = createOrderCommand.Side,
+				Status = OrderStatus.Open,
+				TriggerPrice = createOrderCommand.TriggerPrice,
+				Type = createOrderCommand.Type,
+				UserId = createOrderCommand.UserId
+			};
 
-            if (createOrderCommand.Price < 0)
-                throw new Exception("O preço não pode ser menor do que zero.");
+			return Task.Run(
+					async () =>
+					{
+						return await _orderRepository.Add(order);
+					})
+					.GetAwaiter()
+					.GetResult();
+		}
 
-            if (createOrderCommand.Quantity <= 0)
-                throw new Exception("A quantidade não pode ser menor do que zero.");
+		private void ValidateCreateOrderCommand(CreateOrderCommand createOrderCommand) // aqui da pra melhorar esse monte de exception
+		{
+			if (createOrderCommand.UserId <= 0)
+				throw new Exception("Usuário inválido.");
 
-            if (string.IsNullOrWhiteSpace(createOrderCommand.Symbol))
-                throw new Exception("O instrumento deve conter valor.");
+			if (createOrderCommand.Price < 0)
+				throw new Exception("O preço não pode ser menor do que zero.");
 
-            var instrumentInfo = Task.Run(
-                async () =>
-                {
-                    return await _instrumentInfoRepository.Get(createOrderCommand.Symbol);
-                })
-                .GetAwaiter()
-                .GetResult();
+			if (createOrderCommand.Quantity <= 0)
+				throw new Exception("A quantidade não pode ser menor do que zero.");
 
-            if (!createOrderCommand.ExpiresAt.HasValue && _ordersThatShouldHaveExpireDate.Contains(createOrderCommand.Type))
-                throw new Exception("Para o tipo de ordem especificado a data de validade deve ser preenchida.");
+			if (string.IsNullOrWhiteSpace(createOrderCommand.Symbol))
+				throw new Exception("O instrumento deve conter valor.");
 
-            if (createOrderCommand.ExpiresAt < DateTime.Now && _ordersThatShouldHaveExpireDate.Contains(createOrderCommand.Type))
-                throw new Exception("Data de expiração inválida.");
+			var instrumentInfo = Task.Run(
+				async () =>
+				{
+					return await _instrumentInfoRepository.Get(createOrderCommand.Symbol);
+				})
+				.GetAwaiter()
+				.GetResult();
 
-            if (createOrderCommand.Type == OrderType.Stop && createOrderCommand.TriggerPrice <= 0)
-                throw new Exception("O preço de gatilho deve ser preenchido quando a ordem é de stop.");
+			if (!createOrderCommand.ExpiresAt.HasValue && _ordersThatShouldHaveExpireDate.Contains(createOrderCommand.Type))
+				throw new Exception("Para o tipo de ordem especificado a data de validade deve ser preenchida.");
 
-            if(createOrderCommand.Quantity % instrumentInfo.LotStep != 0 ||
-                createOrderCommand.Quantity < instrumentInfo.MinLot ||
-                createOrderCommand.Quantity > instrumentInfo.MaxLot)
-                throw new Exception("Quantidade inválida.");
+			if (createOrderCommand.ExpiresAt < DateTime.Now && _ordersThatShouldHaveExpireDate.Contains(createOrderCommand.Type))
+				throw new Exception("Data de expiração inválida.");
 
-            var order = new Order {
-                ExpiresAt = createOrderCommand.ExpiresAt,
-                CreatedAt = DateTime.Now,
-                Symbol = createOrderCommand.Symbol,
-                Price = createOrderCommand.Price,
-                Quantity = createOrderCommand.Quantity,
-                Side = createOrderCommand.Side,
-                Status = OrderStatus.Open,
-                TriggerPrice = createOrderCommand.TriggerPrice,
-                Type = createOrderCommand.Type,
-                UserId = createOrderCommand.UserId
-            };
+			if (createOrderCommand.Type == OrderType.Stop && createOrderCommand.TriggerPrice <= 0)
+				throw new Exception("O preço de gatilho deve ser preenchido quando a ordem é de stop.");
 
-            return Task.Run(
-                    async () => {
-                        return await _orderRepository.Add(order);
-                    })
-                    .GetAwaiter()
-                    .GetResult();
-        }
+			if (createOrderCommand.Quantity % instrumentInfo.LotStep != 0 ||
+				createOrderCommand.Quantity < instrumentInfo.MinLot ||
+				createOrderCommand.Quantity > instrumentInfo.MaxLot)
+				throw new Exception("Quantidade inválida.");
+		}
 
-        public Task<DeleteOrderStatus> Delete(DeleteOrderCommand deleteOrderCommand)
+		public Task<DeleteOrderStatus> Delete(DeleteOrderCommand deleteOrderCommand) // TODO: Nao faz nada, não deleta
         {
             throw new NotImplementedException();
         }
 
-        public Task<int> Update(UpdateOrderCommand updateOrderCommand)
+        public Task<int> Update(UpdateOrderCommand updateOrderCommand) //TODO: Não atualiza nada
         {
             throw new NotImplementedException();
         }

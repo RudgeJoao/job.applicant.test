@@ -23,10 +23,10 @@ namespace BestHB
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IOrderService, OrderService>();
-            services.AddTransient<IRepository, InstrumentInfoRepository>();
-            services.AddTransient<IRepository, OrderRepository>();
+            services.AddTransient<IRepository, InstrumentInfoRepository>(); //TODO: Devia ser IInstrumentInfoRepository
+			services.AddTransient<IRepository, OrderRepository>(); //TODO: Devia ser IOrderRepository
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

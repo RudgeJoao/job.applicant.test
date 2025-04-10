@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BestHB.Domain.Commands
 {
-    public class DeleteOrderCommand
+    public class DeleteOrderCommand //TODO: Comando vazio 
     {
     }
 
